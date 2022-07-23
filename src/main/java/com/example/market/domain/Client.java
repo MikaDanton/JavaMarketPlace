@@ -43,6 +43,18 @@ public class Client {
         clientProductList.remove(clientProduct);
         clientProduct.setClient(null);
     }
+    public void addMoney(Integer money) throws Exception {
+        if(money < 0)
+            throw new Exception("Money cannot be negative");
+        this.amountOfMoney += money;
+    }
+    public void removeMoney(Integer money)throws Exception{
+        if(money < 0)
+            throw new Exception("Money cannot be negative");
+        if(this.amountOfMoney < money)
+            throw new Exception("Amount Of Money cannot be negative");
+        this.amountOfMoney -= money;
+    }
     public void setId(Integer id) {
         this.id = id;
     }
